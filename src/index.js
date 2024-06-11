@@ -1,9 +1,12 @@
+
 import dotenv from 'dotenv'
 import express from 'express'
 import connectDb from './db/db.js';
 import { app } from './app.js';
 
-dotenv.config()
+dotenv.config({
+    path: "./.env"
+})
 
 
 connectDb().then(()=>{
@@ -13,6 +16,7 @@ connectDb().then(()=>{
 }).catch((err)=>{
     console.log("Error While Listening Port",err)
 })
+
 
 
 
